@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import TabsContainer from "./composition_patterns/4_Compound/TabsContainer";
+import SearchInput from "./composition_patterns/4_Compound/2.1_FlyOut";
+import { LockableInput } from "./composition_patterns/3_Render_Props/RenderProps";
+import { UsersContainer } from "./composition_patterns/1_Cointainer_Presentation/UserContainer";
+import {
+  MyComponentWithLogging,
+  MyComponentWithLoggingAndStyles,
+  MyComponentWithStyles,
+} from "./composition_patterns/2_HOC/MyComponent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <div>
+        <UsersContainer />
+      </div> */}
+      {/* <div>
+        <MyComponentWithLogging />
+        <MyComponentWithStyles />
+        <MyComponentWithLoggingAndStyles />
+      </div> */}
+      {/* <div>
+        <LockableInput />
+      </div> */}
+      {/* <div>
+        <TabsContainer />
+      </div> */}
+      {/* <div>
+        <SearchInput />
+      </div> */}
+    </>
   );
 }
 
