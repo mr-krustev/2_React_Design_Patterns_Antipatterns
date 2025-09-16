@@ -1,46 +1,78 @@
-# Getting Started with Create React App
+# Session 3. React Component Architecture And Design Patterns
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Task Description: Create a Sign In / Sign Up Form Using React
 
-## Available Scripts
+### Objective:
 
-In the project directory, you can run:
+Your task is to create a Sign In and Sign Up form using React. The focus of this assignment is building interactive forms, managing state, and handling user input. You are free to use your creativity for structuring the forms and their functionalities. No predefined design is required—use your imagination to create a functional and user-friendly experience.
 
-### `npm start`
+### Requirements:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Core Functionalities:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Sign In Form:**
 
-### `npm test`
+- The form should have fields for email/username and password.
+- Implement validation to check that the fields are not empty.
+- Display appropriate error messages for invalid or missing input.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Sign Up Form:**
 
-### `npm run build`
+- The form should have fields for:
+  - Username
+  - Email
+  - Password
+  - Confirm Password
+- Implement validation for:
+  - Matching passwords.
+  - Valid email format.
+  - Non-empty fields.
+- Optional: Enforce password strength (e.g., minimum length, special characters).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Multi-Stage Form (Optional):
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Implement the Sign Up process as a multi-step form. For example:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Step 1:** Basic information (e.g., username, email).
+- **Step 2:** Password and confirm password.
+- **Step 3:** Optional additional information (e.g., profile details).
+  Add navigation between steps (Next/Previous buttons) with proper state management.
 
-### `npm run eject`
+#### State Management:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Use React's state (e.g., useState or useReducer) to manage the form data.
+- Reset the form after successful submission.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Validation:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Implement real-time or on-submit validation for all fields.
+- Prevent form submission if there are validation errors.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Submission:
 
-## Learn More
+- Simulate form submission by logging the form data to the console.
+- Optionally, display a success message or confirmation after form submission.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Error Handling:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Highlight fields with errors.
+- Display user-friendly error messages.
+
+### Guidelines:
+
+- **React Only:** Do not use external form libraries like React Hook Form. Write the form logic yourself using React's state and event handling.
+- **No Design Rules:** Styling and design are up to you. The focus is on functionality, but feel free to make it visually appealing if you want.
+- **Reusable Components:** Try to create reusable components where possible.
+- **File Structure:** Organize your code in of proposed structure.
+- **Creativity:** You are free to add extra features or enhance the user experience as you see fit.
+
+### Optional Challenges:
+
+- Add a "Show/Hide Password" toggle for password fields.
+- Display password strength indicators.
+- Save form data in localStorage, sessionStorage or use [json-server](https://www.npmjs.com/package/json-server).
+- Add a "Remember Me" checkbox for the Sign In form.
+- Make the forms responsive for different screen sizes.
+- Add useful ReadMe.
+
+Good luck, and have fun coding! 🚀
