@@ -9,10 +9,15 @@ import {
   MyComponentWithLoggingAndStyles,
   MyComponentWithStyles,
 } from "./composition_patterns/2_HOC/MyComponent";
+import { UserList } from "./antipatterns/5_Index_Keys";
+import { SearchInput2 } from "./composition_patterns/4_Compound";
 
 function App() {
   return (
     <>
+      {/* <div style={{ width: "100%" }}>
+        <UserList />
+      </div> */}
       {/* <div>
         <UsersContainer />
       </div> */}
@@ -29,6 +34,9 @@ function App() {
       </div> */}
       {/* <div>
         <SearchInput />
+      </div> */}
+      {/* <div>
+        <SearchInput2 />
       </div> */}
     </>
   );

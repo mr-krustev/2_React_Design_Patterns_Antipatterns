@@ -1,4 +1,10 @@
-import React, { useState, useCallback, ReactNode, createContext, useContext } from 'react';
+import React, {
+  useState,
+  useCallback,
+  ReactNode,
+  createContext,
+  useContext,
+} from "react";
 
 interface FlyOutContextProps {
   open: boolean;
@@ -23,9 +29,16 @@ const FlyOut: React.FC<FlyOutProps> & {
   const toggle = useCallback(() => setOpen((state) => !state), []);
 
   return (
-    <FlyOutContext.Provider value={{ open, toggle, value, setValue }}>
-      <div>{children}</div>
-    </FlyOutContext.Provider>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        setOpen(false);
+      }}
+    >
+      <FlyOutContext.Provider value={{ open, toggle, value, setValue }}>
+        <div>{children}</div>
+      </FlyOutContext.Provider>
+    </form>
   );
 };
 
@@ -34,14 +47,14 @@ interface InputProps {
 }
 
 const Input: React.FC<InputProps> = ({ placeholder }) => {
-  const { value, toggle, setValue } = useContext(FlyOutContext)!;
+  const { value, open, toggle, setValue } = useContext(FlyOutContext)!;
 
   return (
     <input
       type="text"
       value={value}
       onFocus={toggle}
-      onBlur={toggle}
+      onBlur={() => open && toggle()}
       onChange={(e) => setValue(e.target.value)}
       placeholder={placeholder}
     />
@@ -77,7 +90,9 @@ const SearchInput2: React.FC = () => (
   <FlyOut>
     <FlyOut.Input placeholder="Enter an address, city, or ZIP code" />
     <FlyOut.List>
-      <FlyOut.ListItem value="San Francisco, CA">San Francisco, CA</FlyOut.ListItem>
+      <FlyOut.ListItem value="San Francisco, CA">
+        San Francisco, CA
+      </FlyOut.ListItem>
       <FlyOut.ListItem value="Seattle, WA">Seattle, WA</FlyOut.ListItem>
       <FlyOut.ListItem value="Austin, TX">Austin, TX</FlyOut.ListItem>
       <FlyOut.ListItem value="Miami, FL">Miami, FL</FlyOut.ListItem>
