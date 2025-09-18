@@ -116,3 +116,36 @@ function ListItem({
     </li>
   );
 }
+
+// ------
+// Prop Plowing
+
+type ALotOfProps = {
+  a: string;
+  b: string;
+  c: string;
+  d: string;
+  e: string;
+  f: string;
+  g: string;
+};
+
+export const WrapperComponent = (props: ALotOfProps) => {
+  // const cWrapper = `${props.c}Wrapper`;
+
+  return (
+    <ChildComponent
+      a={props.a}
+      b={props.b}
+      c={props.c}
+      d={props.d}
+      e={props.e}
+      f={props.f}
+      g={props.g}
+    />
+  );
+};
+
+export const ChildComponent = (_props: ALotOfProps) => {
+  return <div>Gotta have them all!</div>;
+};
